@@ -12,16 +12,13 @@ export class RegisterComponent {
   constructor(private authService: AuthService) {}
 
   register(): void {
-    this.authService.register(this.username,  this.password).subscribe(
+    this.authService.register(this.username, this.password).subscribe(
       (response) => {
         console.log('Registration successful', response);
-        // Redirect or handle successful registration as needed
       },
       (error) => {
         console.error('Registration failed', error);
-        // Handle registration failure
       }
     );
   }
 }
-

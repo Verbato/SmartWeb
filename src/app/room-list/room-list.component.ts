@@ -4,6 +4,7 @@ import { AuthService } from '../auth.service';
 @Component({
   selector: 'app-room-list',
   templateUrl: './room-list.component.html',
+  styleUrls: ['./room-list.component.css'],
 })
 export class RoomListComponent implements OnInit {
   rooms: any[] = [];
@@ -12,12 +13,12 @@ export class RoomListComponent implements OnInit {
 
   ngOnInit(): void {
     this.authService.getRooms().subscribe(
-      (data) => {
-        this.rooms = data;
+      (rooms) => {
+        this.rooms = rooms;
+        console.log('Rooms:', rooms);
       },
       (error) => {
         console.error('Failed to fetch rooms', error);
-        // Handle error
       }
     );
   }
