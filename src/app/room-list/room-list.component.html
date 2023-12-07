@@ -1,0 +1,11 @@
+<h2>Room List</h2>
+<ul>
+  <li *ngFor="let room of rooms">
+    {{ room.name }} - Owner: {{ room.owner }}
+    <ul>
+      <li *ngFor="let device of room.devices">
+        {{ device.name }} - Type: {{ device.type }} - IP: {{ device.ip }} - Value: {{ device.value }}
+      </li>
+    </ul>
+  </li>
+</ul>
